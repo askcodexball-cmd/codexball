@@ -380,6 +380,10 @@ body {
     opacity: 1;
 }
 
+.partner-logos a {
+    display: inline-block;
+    text-decoration: none;
+}
 /* =========================================
    FOOTER
    ========================================= */
