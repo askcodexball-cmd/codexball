@@ -1,0 +1,454 @@
+/* =========================================
+   CSS VARIABLES (DESIGN SYSTEM)
+   ========================================= */
+   :root {
+    --bg-color: #05120a; /* Very dark green/black */
+    --border-color: #d4af37; /* Gold */
+    --gold-gradient: linear-gradient(180deg, #fceb9d 0%, #d4af37 40%, #b8860b 100%);
+    --gold-text: #e5c158;
+    --text-color: #e0e0e0;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Merriweather', serif;
+}
+
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #020604; /* Deep black background outside the container */
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* =========================================
+   AGE GATE OVERLAY (SCREENSHOT 2)
+   ========================================= */
+.age-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.age-gate-content {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    position: relative;
+    /* BACKGROUND IMAGE: We will update this URL later with your real image */
+    background-image: url('https://via.placeholder.com/500x800/1a1a1a/333333?text=Masked+Man+Image');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* Gradient overlay to make text readable */
+.age-gate-content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, #000 40%, transparent 100%);
+    z-index: 1;
+}
+
+.age-gate-text, .age-gate-buttons {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.age-icon {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--gold-text);
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.age-gate-text h2 {
+    font-family: var(--font-heading);
+    color: var(--gold-text);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.age-gate-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary, .btn-outline {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background: var(--gold-gradient);
+    color: #000;
+    border: 2px solid transparent;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid var(--border-color);
+}
+
+.btn-primary:hover, .btn-outline:hover {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   MAIN PAGE LAYOUT (SCREENSHOT 1)
+   ========================================= */
+.page-wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    position: relative;
+}
+
+/* Inner decorative border */
+.main-container::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* =========================================
+   HEADER & LOGO
+   ========================================= */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    color: var(--gold-text);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   CONTENT & TYPOGRAPHY
+   ========================================= */
+.content-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.lead-text {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.body-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.highlight-text {
+    font-size: 1rem;
+    color: var(--gold-text);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+    color: var(--border-color);
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    flex: 1;
+}
+
+.divider span {
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   BUTTONS (CALL TO ACTIONS)
+   ========================================= */
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.btn-gold-large, .btn-gold-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold-gradient);
+    color: #000;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-gold-large:hover, .btn-gold-small:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.btn-gold-large {
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    gap: 15px;
+}
+
+.btn-gold-large i {
+    font-size: 1.5rem;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-gold-small {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    gap: 10px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.btn-gold-small i {
+    font-size: 1.8rem;
+}
+
+/* =========================================
+   LEGAL SECTION
+   ========================================= */
+.legal-section {
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 1.5rem;
+}
+
+.age-warning-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 1.5rem;
+}
+
+.age-warning-bar p {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gold-text);
+    font-weight: 700;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+}
+
+.age-badge {
+    background: #000;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.disclaimer-box {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.disclaimer-box p {
+    font-size: 0.75rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* =========================================
+   PARTNER LOGOS
+   ========================================= */
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.placeholder-logo {
+    color: #666;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.placeholder-logo:hover {
+    opacity: 1;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--gold-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-links .separator {
+    color: var(--border-color);
+    opacity: 0.5;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & DESKTOP)
+   ========================================= */
+@media (min-width: 600px) {
+    .main-container {
+        padding: 3rem;
+        margin: 20px 0;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .lead-text {
+        font-size: 1.2rem;
+    }
+
+    .body-text, .highlight-text {
+        font-size: 1.05rem;
+    }
+    
+    .age-gate-content {
+        height: 90%;
+        border-radius: 20px;
+        border: 2px solid var(--border-color);
+    }
+}
+
+@media (min-width: 800px) {
+    .btn-gold-large {
+        font-size: 1.4rem;
+    }
+    
+    .store-buttons {
+        gap: 2rem;
+    }
+}
