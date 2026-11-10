@@ -59,7 +59,7 @@ body {
     background-color: #000;
     
     /* THE FIX: 100% auto prevents the image from zooming in too much */
-    background-image: url('assets/masked-man.png');
+    background-image: url('assets/Masked-man.png');
     background-size: 100% auto; 
     background-position: top center;
     background-repeat: no-repeat;
