@@ -21,56 +21,51 @@
 }
 
 body {
-    background-color: #020604; /* Deep black background outside the container */
+    background-color: #020604;
     color: var(--text-color);
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.5; 
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
 }
 
 /* =========================================
-   AGE GATE OVERLAY (SCREENSHOT 2)
+   AGE GATE OVERLAY
    ========================================= */
 .age-gate {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100dvh; /* Better than 100vh for mobile browsers */
+    height: 100dvh;
     background-color: #000;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Adds space around the card */
+    padding: 1rem;
 }
 
 .age-gate-content {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     height: 100%;
-    max-height: 900px; /* Prevents it from being too tall on PC */
+    max-height: 850px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: 1.5rem;
     position: relative;
     background-color: #000;
-    
-    /* THE FIX: 100% auto prevents the image from zooming in too much */
-    background-image: url('assets/Masked-man.png');
+    background-image: url('assets/Masked-man.png'); 
     background-size: 100% auto; 
     background-position: top center;
     background-repeat: no-repeat;
-    
-    /* Adds the gold border from your screenshot */
     border: 2px solid var(--border-color);
     border-radius: 15px;
-    overflow: hidden; /* Keeps the image inside the rounded corners */
+    overflow: hidden;
 }
 
-/* Gradient overlay to blend the bottom of the image into the black background */
 .age-gate-content::before {
     content: '';
     position: absolute;
@@ -90,43 +85,43 @@ body {
 }
 
 .age-icon {
-    width: 80px;
-    height: 80px;
-    border: 3px solid var(--border-color);
+    width: 60px; 
+    height: 60px;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.5rem; 
     color: var(--gold-text);
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 1rem auto;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-    background-color: #000; /* Ensures the circle is solid */
+    background-color: #000;
 }
 
 .age-gate-text h2 {
     font-family: var(--font-heading);
     color: var(--gold-text);
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem; 
+    margin-bottom: 1.2rem;
     letter-spacing: 1px;
 }
 
 .age-gate-buttons {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .btn-primary, .btn-outline {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem 1rem; 
     border-radius: 30px;
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.8rem; 
     cursor: pointer;
     border: none;
     transition: transform 0.2s;
@@ -149,10 +144,10 @@ body {
 }
 
 /* =========================================
-   MAIN PAGE LAYOUT (SCREENSHOT 1)
+   MAIN PAGE LAYOUT
    ========================================= */
 .page-wrapper {
-    padding: 10px;
+    padding: 15px; /* Slightly more padding around the main box */
     display: flex;
     justify-content: center;
 }
@@ -162,13 +157,12 @@ body {
     border: 2px solid var(--border-color);
     border-radius: 15px;
     width: 100%;
-    max-width: 800px;
-    padding: 2rem 1.5rem;
+    max-width: 1100px; /* INCREASED from 800px to fill more of the page */
+    padding: 1.5rem 1.2rem;
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
     position: relative;
 }
 
-/* Inner decorative border */
 .main-container::after {
     content: '';
     position: absolute;
@@ -186,20 +180,20 @@ body {
    ========================================= */
 .header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; 
 }
 
 .main-logo {
-    width: 150px;
+    width: 100px; 
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 50%;
 }
 
 .main-title {
     font-family: var(--font-heading);
     color: var(--gold-text);
-    font-size: 1.5rem;
+    font-size: 0.95rem; 
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -211,34 +205,27 @@ body {
    ========================================= */
 .content-section {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .lead-text {
-    font-size: 1.05rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.8rem; 
+    margin-bottom: 0.6rem;
     color: #fff;
     font-weight: 700;
 }
 
 .body-text {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.7rem; 
+    margin-bottom: 0.6rem;
     color: #ccc;
-}
-
-.highlight-text {
-    font-size: 1rem;
-    color: var(--gold-text);
-    font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 .divider {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1.5rem 0;
+    margin: 0.6rem 0;
     color: var(--border-color);
 }
 
@@ -251,64 +238,64 @@ body {
 
 .divider span {
     margin: 0 15px;
-    font-size: 1.2rem;
+    font-size: 0.8rem; 
 }
 
 /* =========================================
-   BUTTONS (CALL TO ACTIONS)
+   BUTTONS (CALL TO ACTIONS) - 3 IN A ROW
    ========================================= */
 .cta-section {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    flex-direction: row; 
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    align-items: stretch; 
+}
+
+.btn-gold-large {
+    flex: 1; 
+}
+
+.store-buttons {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    width: auto; 
+}
+
+.btn-gold-small {
+    flex: 1;
 }
 
 .btn-gold-large, .btn-gold-small {
     display: flex;
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: var(--gold-gradient);
     color: #000;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 10px; 
     font-family: var(--font-heading);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
+    padding: 0.5rem 0.2rem; 
+    font-size: 0.55rem; 
+    line-height: 1.2;
+    gap: 5px;
+    overflow-wrap: break-word; 
 }
 
 .btn-gold-large:hover, .btn-gold-small:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
 }
 
-.btn-gold-large {
-    padding: 1.2rem 2rem;
-    font-size: 1.2rem;
-    gap: 15px;
-}
-
-.btn-gold-large i {
-    font-size: 1.5rem;
-}
-
-.store-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn-gold-small {
-    flex: 1;
-    padding: 0.8rem 1rem;
-    font-size: 0.9rem;
-    gap: 10px;
-    text-align: left;
-    line-height: 1.2;
-}
-
-.btn-gold-small i {
-    font-size: 1.8rem;
+.btn-gold-large i, .btn-gold-small i {
+    font-size: 1.2rem; 
 }
 
 /* =========================================
@@ -316,7 +303,7 @@ body {
    ========================================= */
 .legal-section {
     border-top: 1px solid rgba(212, 175, 55, 0.3);
-    padding-top: 1.5rem;
+    padding-top: 1.2rem;
 }
 
 .age-warning-bar {
@@ -325,20 +312,21 @@ body {
     justify-content: space-between;
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-bottom: 1.2rem;
 }
 
 .age-warning-bar p {
     flex: 1;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.6rem; 
     color: var(--gold-text);
     font-weight: 700;
-    margin: 0 10px;
+    margin: 0 8px;
     text-transform: uppercase;
     font-family: var(--font-heading);
+    line-height: 1.2;
 }
 
 .age-badge {
@@ -346,25 +334,25 @@ body {
     color: #ff0000;
     border: 2px solid #ff0000;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px; 
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: 0.9rem;
+    font-size: 0.7rem; 
     flex-shrink: 0;
 }
 
 .disclaimer-box {
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     text-align: center;
 }
 
 .disclaimer-box p {
-    font-size: 0.75rem;
+    font-size: 0.65rem; 
     color: #999;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* =========================================
@@ -375,14 +363,14 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 2rem;
+    gap: 12px;
+    margin-bottom: 1.5rem;
 }
 
 .partner-logo {
-    max-height: 45px;
+    max-height: 30px; 
     width: auto;
-    max-width: 100px;
+    max-width: 75px; 
     object-fit: contain;
     opacity: 0.8;
     transition: opacity 0.3s;
@@ -397,7 +385,7 @@ body {
    ========================================= */
 .footer {
     border-top: 1px solid rgba(212, 175, 55, 0.3);
-    padding-top: 1.5rem;
+    padding-top: 1.2rem;
     text-align: center;
 }
 
@@ -405,14 +393,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
 }
 
 .footer-links a {
     color: var(--gold-text);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.7rem; 
     transition: color 0.3s;
 }
 
@@ -423,6 +411,7 @@ body {
 .footer-links .separator {
     color: var(--border-color);
     opacity: 0.5;
+    font-size: 0.7rem;
 }
 
 /* =========================================
@@ -430,50 +419,45 @@ body {
    ========================================= */
 @media (min-width: 600px) {
     .main-container {
-        padding: 3rem;
+        padding: 3rem 4rem; /* More padding on desktop to space out the wide layout */
         margin: 20px 0;
     }
 
     .main-title {
-        font-size: 2rem;
+        font-size: 1.2rem; 
     }
 
     .lead-text {
-        font-size: 1.2rem;
+        font-size: 1rem; /* Increased to fill the wider space */
     }
 
-    .body-text, .highlight-text {
-        font-size: 1.05rem;
+    .body-text {
+        font-size: 0.9rem; /* Increased to fill the wider space */
     }
     
     .age-gate-content {
         height: 90%;
     }
-}
-
-@media (min-width: 800px) {
-    .btn-gold-large {
-        font-size: 1.4rem;
+    
+    .cta-section {
+        gap: 1rem;
+        max-width: 800px; /* Keeps the buttons from getting too stretched on wide screens */
+        margin: 0 auto 2rem auto;
     }
     
     .store-buttons {
-        gap: 2rem;
-    }
-}
-
-/* =========================================
-   MOBILE SPECIFIC ADJUSTMENTS
-   ========================================= */
-@media (max-width: 600px) {
-    .age-icon {
-        width: 65px;
-        height: 65px;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        gap: 1rem;
     }
     
-    .age-gate-text h2 {
-        margin-bottom: 1.5rem;
+    .btn-gold-large, .btn-gold-small {
+        font-size: 0.75rem; 
+        padding: 1rem 0.5rem;
+        border-radius: 15px;
+        gap: 10px;
+    }
+
+    .btn-gold-large i, .btn-gold-small i {
+        font-size: 1.6rem; 
     }
 }
 
@@ -482,15 +466,15 @@ body {
    ========================================= */
 .page-content {
     text-align: left;
-    padding: 2rem 1.5rem;
-    line-height: 1.8;
+    padding: 1.5rem 1.2rem;
+    line-height: 1.6;
 }
 
 .page-content h1 {
     color: var(--gold-text);
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem; 
+    margin-bottom: 1.2rem;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
@@ -499,23 +483,23 @@ body {
 .page-content h2 {
     color: var(--gold-text);
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem; 
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .page-content p, .page-content ul {
     color: #ccc;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+    font-size: 0.75rem; 
+    margin-bottom: 0.8rem;
 }
 
 .page-content ul {
-    margin-left: 1.5rem;
+    margin-left: 1.2rem;
 }
 
 .page-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .back-btn {
@@ -523,7 +507,8 @@ body {
     color: var(--gold-text);
     text-decoration: none;
     font-weight: bold;
-    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
     transition: color 0.3s;
 }
 
@@ -533,6 +518,12 @@ body {
 
 @media (min-width: 600px) {
     .page-content {
-        padding: 3rem;
+        padding: 3rem 4rem;
+    }
+    .page-content h1 {
+        font-size: 1.6rem;
+    }
+    .page-content p, .page-content ul {
+        font-size: 0.9rem;
     }
 }
