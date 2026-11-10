@@ -37,40 +37,50 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh; /* Better than 100vh for mobile browsers */
     background-color: #000;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem; /* Adds space around the card */
 }
 
 .age-gate-content {
     width: 100%;
     max-width: 500px;
-    height: 100dvh; /* FIX: Better than 100vh for mobile browsers */
+    height: 100%;
+    max-height: 900px; /* Prevents it from being too tall on PC */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem 2rem 4rem 2rem; /* FIX: Added extra bottom padding */
+    padding: 2rem;
     position: relative;
-    /* BACKGROUND IMAGE */
+    background-color: #000;
+    
+    /* THE FIX: 100% auto prevents the image from zooming in too much */
     background-image: url('assets/masked-man.png');
-    background-size: cover;
-    background-position: center 20%; /* FIX: Pushes the image down so the ball is higher */
+    background-size: 100% auto; 
+    background-position: top center;
     background-repeat: no-repeat;
+    
+    /* Adds the gold border from your screenshot */
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden; /* Keeps the image inside the rounded corners */
 }
 
-/* Gradient overlay to make text readable and hide the overlap */
+/* Gradient overlay to blend the bottom of the image into the black background */
 .age-gate-content::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70%; /* FIX: Taller gradient to cover the overlap */
-    background: linear-gradient(to top, #000 60%, transparent 100%); /* FIX: Stronger dark base */
+    height: 60%;
+    background: linear-gradient(to top, #000 60%, transparent 100%);
     z-index: 1;
+    pointer-events: none;
 }
 
 .age-gate-text, .age-gate-buttons {
@@ -92,6 +102,7 @@ body {
     color: var(--gold-text);
     margin: 0 auto 1.5rem auto;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    background-color: #000; /* Ensures the circle is solid */
 }
 
 .age-gate-text h2 {
@@ -106,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .btn-primary, .btn-outline {
@@ -369,9 +380,9 @@ body {
 }
 
 .partner-logo {
-    max-height: 45px; /* Keeps all logos the same height */
+    max-height: 45px;
     width: auto;
-    max-width: 100px; /* Prevents wide logos from stretching */
+    max-width: 100px;
     object-fit: contain;
     opacity: 0.8;
     transition: opacity 0.3s;
@@ -437,8 +448,6 @@ body {
     
     .age-gate-content {
         height: 90%;
-        border-radius: 20px;
-        border: 2px solid var(--border-color);
     }
 }
 
@@ -453,18 +462,13 @@ body {
 }
 
 /* =========================================
-   MOBILE SPECIFIC ADJUSTMENTS (NEW)
+   MOBILE SPECIFIC ADJUSTMENTS
    ========================================= */
 @media (max-width: 600px) {
-    .age-gate-content {
-        background-position: center 10%; /* Adjusts image focus on small screens */
-        padding-bottom: 2rem;
-    }
-    
     .age-icon {
-        width: 60px; /* Slightly smaller circle on phones */
-        height: 60px;
-        font-size: 1.5rem;
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
         margin-bottom: 1rem;
     }
     
