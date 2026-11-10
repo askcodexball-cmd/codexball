@@ -55,7 +55,7 @@ body {
     padding: 2rem;
     position: relative;
     /* BACKGROUND IMAGE: We will update this URL later with your real image */
-    background-image: url('https://via.placeholder.com/500x800/1a1a1a/333333?text=Masked+Man+Image');
+    background-image: url('assets/Masked-man.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -368,17 +368,16 @@ body {
     margin-bottom: 2rem;
 }
 
-.placeholder-logo {
-    color: #666;
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    text-align: center;
-    font-weight: bold;
-    opacity: 0.7;
+.partner-logo {
+    max-height: 45px; /* Keeps all logos the same height */
+    width: auto;
+    max-width: 100px; /* Prevents wide logos from stretching */
+    object-fit: contain;
+    opacity: 0.8;
     transition: opacity 0.3s;
 }
 
-.placeholder-logo:hover {
+.partner-logo:hover {
     opacity: 1;
 }
 
