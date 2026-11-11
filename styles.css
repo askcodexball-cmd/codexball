@@ -43,7 +43,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0; /* Removed padding for edge-to-edge on mobile */
+    padding: 0; 
 }
 
 .age-gate-content {
@@ -186,18 +186,8 @@ body {
 .main-logo {
     width: 110px; 
     height: auto;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     border-radius: 50%;
-}
-
-.main-title {
-    font-family: var(--font-heading);
-    color: var(--gold-text);
-    font-size: 1rem; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 /* =========================================
@@ -208,8 +198,9 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Lead text now matches body text size */
 .lead-text {
-    font-size: 0.85rem; 
+    font-size: 0.75rem; 
     margin-bottom: 0.8rem;
     color: #fff;
     font-weight: 700;
@@ -424,31 +415,32 @@ body {
    ========================================= */
 @media (max-width: 600px) {
     .page-wrapper {
-        padding: 0; /* Removes the black space around the box on phones */
+        padding: 0; 
     }
 
     .main-container {
-        border-radius: 0; /* Removes rounded corners so it fills the screen edge-to-edge */
+        border-radius: 0; 
         border-left: none;
         border-right: none;
-        padding: 1.5rem 1rem; /* More inner padding so text uses the full width */
-        min-height: 100vh; /* Fills the entire vertical screen */
+        padding: 1.5rem 1rem; 
+        min-height: 100vh; 
     }
 
     .main-container::after {
-        display: none; /* Hides the inner border on phones to maximize space */
+        display: none; 
     }
 
     .age-gate-content {
-        border-radius: 0; /* Full screen age gate on phones */
+        border-radius: 0; 
         border-left: none;
         border-right: none;
         border-top: none;
         border-bottom: none;
     }
 
+    /* Lead text and body text now match exactly on mobile */
     .lead-text {
-        font-size: 0.9rem; /* Slightly larger text for mobile readability */
+        font-size: 0.8rem; 
     }
 
     .body-text {
@@ -465,12 +457,9 @@ body {
         margin: 20px 0;
     }
 
-    .main-title {
-        font-size: 1.3rem; 
-    }
-
+    /* Lead text and body text now match exactly on desktop */
     .lead-text {
-        font-size: 1.1rem; 
+        font-size: 1rem; 
         margin-bottom: 1.2rem;
     }
 
@@ -512,7 +501,7 @@ body {
     }
     
     .lead-text {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .body-text {
